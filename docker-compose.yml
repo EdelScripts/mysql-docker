@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
   mysql:
-    image: mysql
-    container_name: mysql
+    image: mysql-w-dump
+    container_name: mysqlwdump
     ports: 
       - 3306:3306
     volumes:
@@ -11,5 +11,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: mysql
-      MYSQL_USER: mysqlu
+      MYSQL_USER: user
       MYSQL_PASSWORD: qwerty
