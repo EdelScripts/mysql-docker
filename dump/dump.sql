@@ -81,18 +81,18 @@ CREATE OR REPLACE VIEW current_dept_emp AS
         ON d.emp_no=l.emp_no AND d.from_date=l.from_date AND l.to_date = d.to_date;
 
 SELECT 'LOADING departments' as 'INFO';
-source '/docker-entrypoint-initdb.d/load_departments.dump' ;
+source /docker-entrypoint-initdb.d/load_departments.dump ;
 SELECT 'LOADING employees' as 'INFO';
 source /docker-entrypoint-initdb.d/load_employees.dump ;
 SELECT 'LOADING dept_emp' as 'INFO';
-source '/docker-entrypoint-initdb.d/load_dept_emp.dump' ;
+source /docker-entrypoint-initdb.d/load_dept_emp.dump ;
 SELECT 'LOADING dept_manager' as 'INFO';
-source '/docker-entrypoint-initdb.d/load_dept_manager.dump' ;
+source /docker-entrypoint-initdb.d/load_dept_manager.dump ;
 SELECT 'LOADING titles' as 'INFO';
-source '/docker-entrypoint-initdb.d/load_titles.dump' ;
+source /docker-entrypoint-initdb.d/load_titles.dump ;
 SELECT 'LOADING salaries' as 'INFO';
-source '/docker-entrypoint-initdb.d/load_salaries1.dump' ;
-source '/docker-entrypoint-initdb.d/load_salaries2.dump' ;
-source '/docker-entrypoint-initdb.d/load_salaries3.dump' ;
+source /docker-entrypoint-initdb.d/load_salaries1.dump ;
+source /docker-entrypoint-initdb.d/load_salaries2.dump ;
+source /docker-entrypoint-initdb.d/load_salaries3.dump ;
 
-source '/docker-entrypoint-initdb.d/show_elapsed.sql' ;
+source /docker-entrypoint-initdb.d/show_elapsed.sql ;

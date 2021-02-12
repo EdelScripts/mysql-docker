@@ -1,15 +1,16 @@
 version: '3.3'
 
 services:
-  mysql:
-    image: mysql-w-dump
+  employees:
+    image: mysql
     container_name: mysqlwdump
     ports: 
       - 3306:3306
     volumes:
+      - ./dump:/docker-entrypoint-initdb.d
       - ./mysql/data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: mysql
-      MYSQL_USER: user
-      MYSQL_PASSWORD: qwerty
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: employees
+      MYSQL_USER: notroot
+      MYSQL_PASSWORD: pass
